@@ -1,0 +1,12 @@
+
+1. Создать папку
+	mkdir homework
+2. Сделать в папке 5 файлов (date_A - date_E)
+	touch date_{A..E}
+3. В каждый файл вывести текущую дату (date)
+	for i in $(find . -name "date*"); do date > $i; done
+4. Посчитать вхождение 2017 во всех файлах (результат - 5)
+	а)find . -exec grep -o "2017" '{}' \; | wc -l
+	б)find . -print0 | xargs -0 grep -o "2017" | wc -l
+5. Удалить папку с файлами (нахожусь в /homework)
+	cd ../; rm -rf /home/azgar/homework
